@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "accounts")
 public class Account {
 	private Long account_id;
-	private String accountName;
+	private String account_name;
 	private List<Transaction> transactions = new ArrayList<>();
 	private List<User> users = new ArrayList<>();
 
@@ -34,12 +34,12 @@ public class Account {
 	}
 
 	@Column(length = 100)
-	public String getAccountName() {
-		return accountName;
+	public String getaccount_name() {
+		return account_name;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
+	public void setaccount_name(String account_name) {
+		this.account_name = account_name;
 	}
 
 	@OneToMany(mappedBy = "account")
@@ -62,12 +62,12 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [account_id=" + account_id + ", accountName=" + accountName + "]";
+		return "Account [account_id=" + account_id + ", account_name=" + account_name + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(account_id, accountName);
+		return Objects.hash(account_id, account_name);
 	}
 
 	@Override
@@ -79,6 +79,6 @@ public class Account {
 		if (getClass() != obj.getClass())
 			return false;
 		Account other = (Account) obj;
-		return Objects.equals(account_id, other.account_id) && Objects.equals(accountName, other.accountName);
+		return Objects.equals(account_id, other.account_id) && Objects.equals(account_name, other.account_name);
 	}
 }

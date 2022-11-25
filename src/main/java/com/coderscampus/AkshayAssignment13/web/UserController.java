@@ -79,7 +79,7 @@ public class UserController {
 			numbOfAccounts = user.getAccounts().size() + 1;
 		}
 
-		account.setAccountName("Account #" + numbOfAccounts);
+		account.setaccount_name("Account #" + numbOfAccounts);
 		this.userService.addAccount(user_id, account);
 		int size = this.userService.findById(user_id).getAccounts().size();
 		Account re = this.userService.findById(user_id).getAccounts().get(size - 1);
