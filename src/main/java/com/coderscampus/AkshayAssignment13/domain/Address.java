@@ -8,10 +8,8 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Address
-
-{
-	private Long user_id;
+public class Address {
+	private Long userId;
 	private User user;
 	private String addressLine1;
 	private String addressLine2;
@@ -24,12 +22,12 @@ public class Address
 	}
 
 	@Id
-	public Long getuser_id() {
-		return user_id;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setuser_id(Long user_id) {
-		this.user_id = user_id;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	@OneToOne
@@ -99,8 +97,9 @@ public class Address
 
 	@Override
 	public String toString() {
-		return "Address [user_id=" + user_id + ", user=" + user + ", addressLine1=" + addressLine1 + ", addressLine2="
+		return "Address [userId=" + userId + ", user=" + user + ", addressLine1=" + addressLine1 + ", addressLine2="
 				+ addressLine2 + ", city=" + city + ", region=" + region + ", country=" + country + ", zipCode="
 				+ zipCode + "]";
 	}
+
 }

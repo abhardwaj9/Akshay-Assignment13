@@ -8,9 +8,7 @@ import com.coderscampus.AkshayAssignment13.domain.Account;
 import com.coderscampus.AkshayAssignment13.repository.AccountRepository;
 
 @Service
-public class AccountService
-
-{
+public class AccountService {
 	@Autowired
 	private AccountRepository accountRepository;
 
@@ -18,8 +16,8 @@ public class AccountService
 		this.accountRepository.save(account);
 	}
 
-	public Account findById(Long account_id) {
-		Optional<Account> optionalAccount = this.accountRepository.findById(account_id);
+	public Account findById(Long accountId) {
+		Optional<Account> optionalAccount = this.accountRepository.findById(accountId);
 		return optionalAccount.orElse(new Account());
 	}
 }

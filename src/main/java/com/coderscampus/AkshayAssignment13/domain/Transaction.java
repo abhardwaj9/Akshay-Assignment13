@@ -12,9 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "transactions")
-public class Transaction
-
-{
+public class Transaction {
 	private Long transactionId;
 	private Double amount;
 	private String type;

@@ -17,10 +17,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User
-
-{
-	private Long user_id;
+public class User {
+	private Long userId;
 	private String username;
 	private String password;
 	private String name;
@@ -33,12 +31,12 @@ public class User
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long getuser_id() {
-		return user_id;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setuser_id(Long user_id) {
-		this.user_id = user_id;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getUsername() {
@@ -94,13 +92,13 @@ public class User
 
 	@Override
 	public String toString() {
-		return "User [user_id=" + user_id + ", username=" + username + ", password=" + password + ", name=" + name
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", name=" + name
 				+ ", createdDate=" + createdDate + ", address=" + address + ", accounts=" + accounts + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(name, password, user_id, username);
+		return Objects.hash(name, password, userId, username);
 	}
 
 	@Override
@@ -113,7 +111,7 @@ public class User
 			return false;
 		User other = (User) obj;
 		return Objects.equals(name, other.name) && Objects.equals(password, other.password)
-				&& Objects.equals(user_id, other.user_id) && Objects.equals(username, other.username);
+				&& Objects.equals(userId, other.userId) && Objects.equals(username, other.username);
 	}
 
 }

@@ -15,8 +15,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "accounts")
 public class Account {
-	private Long account_id;
-	private String account_name;
+	private Long accountId;
+	private String accountName;
 	private List<Transaction> transactions = new ArrayList<>();
 	private List<User> users = new ArrayList<>();
 
@@ -25,21 +25,21 @@ public class Account {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long getaccount_id() {
-		return account_id;
+	public Long getAccountId() {
+		return accountId;
 	}
 
-	public void setaccount_id(Long account_id) {
-		this.account_id = account_id;
+	public void setAccountId(Long accountId) {
+		this.accountId = accountId;
 	}
 
 	@Column(length = 100)
-	public String getaccount_name() {
-		return account_name;
+	public String getAccountName() {
+		return accountName;
 	}
 
-	public void setaccount_name(String account_name) {
-		this.account_name = account_name;
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
 	}
 
 	@OneToMany(mappedBy = "account")
@@ -62,12 +62,12 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [account_id=" + account_id + ", account_name=" + account_name + "]";
+		return "Account [accountId=" + accountId + ", accountName=" + accountName + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(account_id, account_name);
+		return Objects.hash(accountId, accountName);
 	}
 
 	@Override
@@ -79,6 +79,7 @@ public class Account {
 		if (getClass() != obj.getClass())
 			return false;
 		Account other = (Account) obj;
-		return Objects.equals(account_id, other.account_id) && Objects.equals(account_name, other.account_name);
+		return Objects.equals(accountId, other.accountId) && Objects.equals(accountName, other.accountName);
 	}
+
 }
